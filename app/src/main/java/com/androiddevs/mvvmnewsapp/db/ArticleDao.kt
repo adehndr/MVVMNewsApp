@@ -2,16 +2,16 @@ package com.androiddevs.mvvmnewsapp.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.androiddevs.mvvmnewsapp.models.Article
+import com.androiddevs.mvvmnewsapp.Article
 
 @Dao
 interface ArticleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(article: Article): Long
+    suspend fun insertUpdate (article : Article) : Long
 
     @Query("SELECT * FROM articles")
-    fun getAllArticles(): LiveData<List<Article>>
+    fun getAllArticles() : LiveData<List<Article>>
 
     @Delete
     suspend fun deleteArticle(article: Article)
