@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/AndroidDev/PhilipLackner/MVVMNews/app/src/main/res/layout/item_article_preview.xml" value="0.33" />
         <entry key="..\:/Programming/AndroidDev/PhilipLackner/NewsAppPlaylist/app/src/main/res/drawable-v24/ic_breaking_news.xml" value="0.240625" />
         <entry key="..\:/Programming/AndroidDev/PhilipLackner/NewsAppPlaylist/app/src/main/res/layout/activity_main.xml" value="0.20364583333333333" />
         <entry key="..\:/Programming/AndroidDev/PhilipLackner/NewsAppPlaylist/app/src/main/res/layout/fragment_article.xml" value="0.20364583333333333" />
