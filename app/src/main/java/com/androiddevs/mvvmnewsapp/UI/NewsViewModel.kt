@@ -3,6 +3,7 @@ package com.androiddevs.mvvmnewsapp.UI
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.androiddevs.mvvmnewsapp.model.Article
 import com.androiddevs.mvvmnewsapp.model.NewsResponse
 import com.androiddevs.mvvmnewsapp.repository.NewsRepository
 import com.androiddevs.mvvmnewsapp.util.Resource
@@ -19,6 +20,8 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel() {
     init {
         getBreakingNews("us")
     }
+
+    // Remote Data Source Function
 
     fun getBreakingNews(countryCode : String) = viewModelScope.launch {
         breakingNews.postValue(Resource.Loading())
@@ -49,4 +52,18 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel() {
         }
         return Resource.Error(response.message())
     }
+
+    // Local Database Function
+
+    fun insertUpdateArticle(article: Article) = viewModelScope.launch {
+        newsRepository.insertUpdateArticle(article)
+    }
+
+    fun getAllArticle() = newsRepository.getAllArticles()
+
+    fun deleteArticle(article : Article) = viewModelScope.launch {
+        newsRepository.deleteArticle(article)
+    }
+
+
 }

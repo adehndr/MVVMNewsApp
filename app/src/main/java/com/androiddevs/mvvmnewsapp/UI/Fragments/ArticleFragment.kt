@@ -11,6 +11,7 @@ import com.androiddevs.mvvmnewsapp.R
 import com.androiddevs.mvvmnewsapp.UI.MainActivity
 import com.androiddevs.mvvmnewsapp.UI.NewsViewModel
 import com.androiddevs.mvvmnewsapp.adapters.NewsAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_article.*
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 
@@ -27,6 +28,12 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
             val webViewClient = WebViewClient()
             loadUrl(article.url)
         }
+
+        fab.setOnClickListener {
+            viewModel.insertUpdateArticle(article)
+            Snackbar.make(view,"Succesfully Saved",Snackbar.LENGTH_SHORT).show()
+        }
+
 
     }
 }
